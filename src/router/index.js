@@ -31,7 +31,7 @@ export default new Router({
       beforeEnter: authGuard
     },
     {
-      path: '/news_item/:id',
+      path: '/item_news/:id',
       name: 'newsSingle',
       component: () => import('../views/NewsSingle.vue'),
       beforeEnter: authGuard

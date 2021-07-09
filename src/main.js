@@ -8,7 +8,12 @@ import './../node_modules/bulma/css/bulma.css';
 import { domain, clientId } from "../auth_config.json";
 // Import the plugin here
 import { Auth0Plugin } from "./auth";
+import VueApollo from 'vue-apollo'
+import { createProvider } from './vue-apollo'
+
+
 // Install the authentication plugin here
+Vue.config.productionTip = false
 
 Vue.use(Auth0Plugin, {
   domain,
@@ -19,14 +24,18 @@ Vue.use(Auth0Plugin, {
         ? appState.targetUrl
         : window.location.pathname
     );
-  }
-});
+  },
+  
+},
+);
 
-
+Vue.use(VueApollo)
 Vue.use(Buefy)
 Vue.config.productionTip = false
 
+// Create the apollo client
 new Vue({
   router,
+  apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount('#app')

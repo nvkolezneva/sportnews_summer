@@ -14,7 +14,6 @@
     <div class="navbar-start">
       <router-link to="/" class="navbar-item">Новости</router-link>
       <router-link to="/events" class="navbar-item">Мероприятия</router-link>
-      <router-link to="/event_form" class="navbar-item">Запись на мероприятие</router-link>
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
